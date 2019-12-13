@@ -1,0 +1,26 @@
+<apex:page doctype="html-5.0" lightningStylesheets="true" controller="INV_DM_JobsController">
+      <apex:form >       
+      <apex:sectionHeader title="Run Migration Tool Jobs"/>      
+      <apex:pagemessages />
+      <apex:pageBlock id="pg" title="Job Run Section">
+      
+          <apex:pageBlockSection >
+              <apex:input value="{!batchSize}" type="number" id="batchSize" label="Batch Size : "/><br/><br/>
+              <apex:input value="{!instanceNo}" type="number" id="instanceNo" label="Instance No : "/><br/><br/>
+              <apex:commandButton action="{!runValidationJob}" value="Run Validation Job" id="ValidButton"/><br/><br/>
+              <apex:commandButton action="{!runMigrationJob}" value="Run Migration Job" id="MigrateButton"/>
+          </apex:pageBlockSection>   
+          
+          <!--<apex:pageBlockSection rendered="{!batchStatusBool}" title="Job Status">
+          <apex:actionStatus id="act" startText="Checking..." startStyleClass="font-size:50px;"/>
+          <font size="5" color="black"> <b> Batch Status is </b> </font>
+          <font size="5" color="Green"> <b> {!batchStatus} </b> </font>
+          <apex:actionPoller interval="5" action="{!checkBatchStatus}" enabled="{!pollerBool}" reRender="pg" status="act"/>   
+          </apex:pageBlockSection>   -->  
+                              
+      </apex:pageBlock>   
+      
+      
+      
+   </apex:form>
+</apex:page>

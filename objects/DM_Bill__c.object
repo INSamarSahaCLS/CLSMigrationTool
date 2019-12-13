@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>DM_Actual_Tolerance_Amount__c</fullName>
+        <description>This is the tolerance amount calculated from the bill. It will be populated on billing based on the tolerance defined on Loan account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated from loan account on the basis of tolerance amount calculated.</inlineHelpText>
+        <label>DM Actual Tolerance Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this record can be archived. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM Archive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Average_Daily_Balance__c</fullName>
+        <description>Average daily balance of the billing cycle</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Average daily balance that was maintained from billing start date to billing end date</inlineHelpText>
+        <label>DM Average Daily Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Balance_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>DM_Due_Amt__c -  DM_Payment_Amt__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DM Balance Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Balance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the principal balance on the loan after this bill has been generated.</inlineHelpText>
+        <label>DM Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Bill_Cycle_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>end date of current billing cycle</inlineHelpText>
+        <label>DM Bill Cycle End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Bill_Cycle_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date from which billing period starts.</inlineHelpText>
+        <label>DM Bill Cycle Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_CL_Contract__c</fullName>
+        <externalId>false</externalId>
+        <label>DM CL Contract</label>
+        <referenceTo>DM_Loan_Account__c</referenceTo>
+        <relationshipLabel>DM Bills</relationshipLabel>
+        <relationshipName>DM_Bills</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>DM_Closing_Balance__c</fullName>
+        <description>Principal balance maintained as on the last day of current billing cycle. This is the sum of all disbursals minus the sum of all payments made till the last day of the current billing cycle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Principal balance maintained as on the last day of current billing cycle. This is the sum of all disbursals minus the sum of all payments made till the last day of the current billing cycle.</inlineHelpText>
+        <label>DM Closing Principal Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Compounding_Interest_Billed__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Compounding Interest Billed (+)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_10__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_1__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_2__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_3__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_4__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_5__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_6__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_7__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_8__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_9__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_DD_Primary_Flag__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Primary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Due_Amt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Due Amount</description>
+        <externalId>false</externalId>
+        <label>DM Due Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Due_Date__c</fullName>
+        <description>Due date of the due.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Due Date of the Due</inlineHelpText>
+        <label>DM Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Due_Type_Description__c</fullName>
+        <description>Description of Due, to be shown on UI</description>
+        <externalId>false</externalId>
+        <label>DM Due Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Due_Type__c</fullName>
+        <description>Due Type Id</description>
+        <externalId>false</externalId>
+        <label>DM Due Type Id</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>DM External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Fees_Billed__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Billed Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Fees_Due__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Fees due in this billing cycle</inlineHelpText>
+        <label>DM Fees Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Fees_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Paid Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Billed__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Billed Interest (=)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Due__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Interest due in this billing cycle</inlineHelpText>
+        <label>DM Interest Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Paid Interest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Late_Charge_Applied__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Late Charge Applied</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Master_Archive_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this is a master object record containing one or more child object records. Master object records may be archived but are not deleted by the system. This is automatically updated by the system. Do not update it manually.</inlineHelpText>
+        <label>DM Master Archive Object</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Next_Due_Date_Without_Holi_Treatment__c</fullName>
+        <description>Internal field : This field will hold the actual next installment date of the subsequent bill irrespective of holidays specified with the business hours, if any, attached with the product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal field : This field will hold the actual next installment date of the subsequent bill irrespective of holidays specified with the business hours, if any, attached with the product.</inlineHelpText>
+        <label>DM Next Due Date Without Holi Treatment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Opening_Balance__c</fullName>
+        <description>Principal balance maintained as on the first day of current billing cycle. This is the sum of all disbursals minus the sum of all payments made till the first day of the current billing cycle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Principal balance maintained as on the first day of current billing cycle. This is the sum of all disbursals minus the sum of all payments made till the first day of the current billing cycle.</inlineHelpText>
+        <label>DM Opening Principal Balance</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Payment_Amt__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Payment Amount.</description>
+        <externalId>false</externalId>
+        <label>DM Payment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Payment_Date__c</fullName>
+        <description>Payment Date.</description>
+        <externalId>false</externalId>
+        <label>DM Payment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Payment_Satisfied__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Payment Satisfied</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Payoff_As_Of_Previous_Bill__c</fullName>
+        <description>The payoff amount as on the day that the previous bill was generated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The payoff amount as on the day that the previous bill was generated.</inlineHelpText>
+        <label>DM Payoff As Of Previous Bill</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Payoff_Balance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the amount needed to payoff the loan after this bill has been generated.</inlineHelpText>
+        <label>DM Payoff Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Previous_Bill_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Total amount due during last billing cycle</inlineHelpText>
+        <label>DM Previous Bill Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Principal_Billed__c</fullName>
+        <description>Billed Principal Amount.</description>
+        <externalId>false</externalId>
+        <label>DM Billed Principal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Principal_Paid__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Paid Principal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Regular_Interest_Billed__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Regular Interest Billed (+)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Remarks__c</fullName>
+        <description>Remarks for bill amount calculation.</description>
+        <externalId>false</externalId>
+        <label>DM Remarks</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Rescheduled_flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this flag is checked that means this bills was marked as not enabled as part of Rescheduled transaction posted on this loan account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this flag is checked that means this bills was marked as not enabled as part of Rescheduled transaction posted on this loan account.</inlineHelpText>
+        <label>DM Is Rescheduled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Satisfied_With_Tolerance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This indicates that the bill is satisfied due to tolerance applied on the bill</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This indicates that the bill is satisfied due to tolerance applied on the bill</inlineHelpText>
+        <label>DM Satisfied With Tolerance</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Summary_Record_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of the summary transaction record within which this record is summarized. This is automatically generated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM Summary Record Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Summary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that the record is a summary transaction record for data archival purpose. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM Summary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_TDS_Amount_Due__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Total TDS Amount Due</description>
+        <externalId>false</externalId>
+        <label>DM TDS Amount Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_TDS_Paid_Amount__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Total TDS Amount Paid</description>
+        <externalId>false</externalId>
+        <label>DM TDS Paid Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_TDS_Percentage__c</fullName>
+        <description>Percenatge of TDS applied on Interest</description>
+        <externalId>false</externalId>
+        <label>DM TDS Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DM_Tolerance__c</fullName>
+        <defaultValue>0.0</defaultValue>
+        <description>This is will be populated on billing based on the tolerance rate defined on Loan account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated from loan account on the basis of tolerance rate defined.</inlineHelpText>
+        <label>DM Tolerance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Amount_Disbursed__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount disbursed during billing cycle</inlineHelpText>
+        <label>DM Total Amount Disbursed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Fees_Waived__c</fullName>
+        <description>Total fees waived during this billing cycle</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total fees waived during this billing cycle</inlineHelpText>
+        <label>DM Fees Waived In Cycle</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Interest_Waived__c</fullName>
+        <description>Total interest waived during this billing cycle</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total interest waived during this billing cycle</inlineHelpText>
+        <label>DM Interest Waived In Cycle</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Payments_Received__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total payment amount received during this billing cycle.</inlineHelpText>
+        <label>DM Total Payments Received</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Transaction_Date__c</fullName>
+        <description>Transaction date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which the transaction got created.</inlineHelpText>
+        <label>DM Transaction Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_waiver_applied__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to indicate if any applicable waiver  is applied on this bill. Will be set to true when applied</description>
+        <externalId>false</externalId>
+        <label>DM Waiver Applied</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>DM Bill</label>
+    <nameField>
+        <label>DM Bill Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DM Bills</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>DM_ACH_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>DM ACH Code</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Account_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Account Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM_Saving</fullName>
+                    <default>false</default>
+                    <label>DM_Saving</label>
+                </value>
+                <value>
+                    <fullName>DM_Checking</fullName>
+                    <default>false</default>
+                    <label>DM_Checking</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Account_Usage__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Account Usage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM_Investor Trust Account</fullName>
+                    <default>false</default>
+                    <label>DM_Investor Trust Account</label>
+                </value>
+                <value>
+                    <fullName>DM_Collections Trust Account</fullName>
+                    <default>false</default>
+                    <label>DM_Collections Trust Account</label>
+                </value>
+                <value>
+                    <fullName>DM_Advance Trust Account</fullName>
+                    <default>false</default>
+                    <label>DM_Advance Trust Account</label>
+                </value>
+                <value>
+                    <fullName>DM_Business Account</fullName>
+                    <default>false</default>
+                    <label>DM_Business Account</label>
+                </value>
+                <value>
+                    <fullName>DM_Tax Withholding Account</fullName>
+                    <default>false</default>
+                    <label>DM_Tax Withholding Account</label>
+                </value>
+                <value>
+                    <fullName>DM_Borrower/Investor Account</fullName>
+                    <default>false</default>
+                    <label>DM_Borrower/Investor Account</label>
+                </value>
+                <value>
+                    <fullName>DM_Broker Account</fullName>
+                    <default>false</default>
+                    <label>DM_Broker Account</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Bank Accounts</relationshipLabel>
+        <relationshipName>Bank_Accountss</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this record can be archived. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM Archive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Bank_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Bank Account Number</label>
+        <length>50</length>
+        <maskChar>X</maskChar>
+        <maskType>lastFour</maskType>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>EncryptedText</type>
+    </fields>
+    <fields>
+        <fullName>DM_Bank_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Bank Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_CL_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM CL Contract</label>
+        <referenceTo>DM_Loan_Account__c</referenceTo>
+        <relationshipLabel>DM Bank Accounts</relationshipLabel>
+        <relationshipName>DM_Bank_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Bank Accounts</relationshipLabel>
+        <relationshipName>Bank_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_10__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_1__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_2__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_3__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_4__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_5__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_6__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_7__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_8__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_9__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>DM External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Master_Archive_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this is a master object record containing one or more child object records. Master object records may be archived but are not deleted by the system. This is automatically updated by the system. Do not update it manually.</inlineHelpText>
+        <label>DM Master Archive Object</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Routing_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a nine digit number used to identify the financial institution in a transaction.</inlineHelpText>
+        <label>DM Routing Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Signature_Line__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Signature Line</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Summary_Record_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of the summary transaction record within which this record is summarized. This is automatically generated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM Summary Record Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Summary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that the record is a summary transaction record for data archival purpose. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM Summary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>DM Bank Account</label>
+    <nameField>
+        <label>DM Bank Account Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DM Bank Accounts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>DM_Accrue_Interest_From__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date from which the interest on the charge will be calculated. If this is not mentioned interest will be calculated from the date the charge was incurred.</inlineHelpText>
+        <label>DM_Accrue Interest From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this record can be archived. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM_Archive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Balance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the principal balance on the loan after the charge has been applied.</inlineHelpText>
+        <label>DM_Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_CL_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM CL Contract</label>
+        <referenceTo>DM_Loan_Account__c</referenceTo>
+        <relationshipLabel>DM Charges</relationshipLabel>
+        <relationshipName>DM_Charges</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Calculated_Interest3__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>View only field which shows the calculated interest from last accrual date from SOD process.</description>
+        <externalId>false</externalId>
+        <label>DM_Calculated Interest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Capitalization_Date__c</fullName>
+        <description>Charge&apos;s Capitalization Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Charge&apos;s Capitalization Date</inlineHelpText>
+        <label>DM_Capitalization Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Charge_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>DM_Charge Type_deprecated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM_Late Fees</fullName>
+                    <default>false</default>
+                    <label>DM_Late Fees</label>
+                </value>
+                <value>
+                    <fullName>DM_NSF Fees</fullName>
+                    <default>false</default>
+                    <label>DM_NSF Fees</label>
+                </value>
+                <value>
+                    <fullName>DM_Wire Fees</fullName>
+                    <default>false</default>
+                    <label>DM_Wire Fees</label>
+                </value>
+                <value>
+                    <fullName>DM_Pay-Off Fees</fullName>
+                    <default>false</default>
+                    <label>DM_Pay-Off Fees</label>
+                </value>
+                <value>
+                    <fullName>DM_Other</fullName>
+                    <default>true</default>
+                    <label>DM_Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_10__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_1__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_2__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_3__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_4__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_5__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_6__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_7__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_8__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_9__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date the charge was incurred.</inlineHelpText>
+        <label>DM_Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>DM External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Fee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM Fee</label>
+        <referenceTo>loan__Fee__c</referenceTo>
+        <relationshipLabel>DM Charges</relationshipLabel>
+        <relationshipName>DM_Charges</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Bearing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this option if the charge is interest bearing.</inlineHelpText>
+        <label>DM_Interest Bearing</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Due__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Interest due after a payment(txn amount insufficient to clear complete interest) on interest bearing charges</description>
+        <externalId>false</externalId>
+        <label>DM_Interest Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Rate__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the interest rate to be applied on the charge (if applicable)</inlineHelpText>
+        <label>DM_Interest Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DM_Internal_Accounting_Generated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This field indicates if accounting has been passed for the accrual entry record.</inlineHelpText>
+        <label>DM_Internal Accounting Generated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Internal_Accounting_Rev_Generated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM_Internal Accounting Rev Generated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Is_Charge_Capitalized__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM_Charge Capitalized</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Is_Included_In_Due__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Field should not be updated manually. System updates this field when charge is added to bill.</inlineHelpText>
+        <label>DM_Is Included In Due</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Last_Accrual_Date__c</fullName>
+        <description>Last accrual Date on charge (Usually the last payment transaction date)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the last interest accrual was processed</inlineHelpText>
+        <label>DM_Last Accrual Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Master_Archive_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this is a master object record containing one or more child object records. Master object records may be archived but are not deleted by the system. This is automatically updated by the system. Do not update it manually.</inlineHelpText>
+        <label>DM_Master Archive Object</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Original_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The original amount of the charge.</inlineHelpText>
+        <label>DM_Original Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Original_Tax__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DM_Original Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_Paid_Amount__c</fullName>
+        <defaultValue>0.0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount that has been paid.</inlineHelpText>
+        <label>DM_Paid Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Paid__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM_Paid</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Payoff_Balance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the balance needed to payoff the loan after this charge has been applied.</inlineHelpText>
+        <label>DM_Payoff Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Principal_Due__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Principal amount of charge that is yet to be paid.</description>
+        <externalId>false</externalId>
+        <label>DM_Principal Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Reason_Waived__c</fullName>
+        <externalId>false</externalId>
+        <label>DM_Reason Waived</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM_Customer Satisfaction</fullName>
+                    <default>false</default>
+                    <label>DM_Customer Satisfaction</label>
+                </value>
+                <value>
+                    <fullName>DM_Non-Recoverable</fullName>
+                    <default>false</default>
+                    <label>DM_Non-Recoverable</label>
+                </value>
+                <value>
+                    <fullName>DM_Bankruptcy - Active</fullName>
+                    <default>false</default>
+                    <label>DM_Bankruptcy - Active</label>
+                </value>
+                <value>
+                    <fullName>DM_Bankruptcy - Discharged</fullName>
+                    <default>false</default>
+                    <label>DM_Bankruptcy - Discharged</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Reference__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This text can be used to provide additional information about the charge.</inlineHelpText>
+        <label>DM_Reference</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>DM_Summary_Record_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of the summary transaction record within which this record is summarized. This is automatically generated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM_Summary Record Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Summary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that the record is a summary transaction record for data archival purpose. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>DM_Summary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Tax_Paid__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DM_Tax Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_Tax_Remaining__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>DM_Tax Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Amount_Due__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Replacement for formula field</description>
+        <externalId>false</externalId>
+        <label>DM_Total Amount Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Due_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>DM_Principal_Due__c + DM_Interest_Due__c + DM_Calculated_Interest3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DM_Total Due Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Waived_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>DM_Waived_Principal__c +  DM_Waived_Interest__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DM_Total Waived Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Waive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This flag is set when the charge is fully waived.</inlineHelpText>
+        <label>DM_Waived</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Waived_Interest__c</fullName>
+        <externalId>false</externalId>
+        <label>DM_Waived Interest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Waived_Principal__c</fullName>
+        <externalId>false</externalId>
+        <label>DM_Waived Principal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_payment_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>DM payment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>DM Charge</label>
+    <nameField>
+        <label>DM Charge Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DM Charges</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CL_Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CL Contract</label>
+        <referenceTo>DM_Loan_Account__c</referenceTo>
+        <relationshipLabel>DM Loan Payment Transactions</relationshipLabel>
+        <relationshipName>DM_Loan_Payment_Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_ACH_Filename__c</fullName>
+        <externalId>false</externalId>
+        <label>ACH Filename</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Actual_TDS__c</fullName>
+        <description>Actual Amount of TDS applied on the LPT</description>
+        <externalId>false</externalId>
+        <label>Actual TDS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Affected_Installment_Ids__c</fullName>
+        <externalId>false</externalId>
+        <label>Affected Installment Ids</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Applied_Spread__c</fullName>
+        <description>This is the spread that was applied on this payment.</description>
+        <externalId>false</externalId>
+        <label>Applied Spread</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Archived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this record can be archived. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>Archive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Automated_Payment_Setup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM Automated Payment Setup</label>
+        <referenceTo>DM_Automated_Payment_Setup__c</referenceTo>
+        <relationshipLabel>DM Loan Payment Transactions</relationshipLabel>
+        <relationshipName>DM_Loan_Payment_Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Backdated_Reschedule_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be marked true during reversal of a payment before rate/index change.This field indicates that backdated reschedule will be required for the related contract.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be marked true during reversal of a payment before rate/index change.This field indicates that backdated reschedule will be required for the related contract.</inlineHelpText>
+        <label>Backdated Reschedule Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Balance__c</fullName>
+        <externalId>false</externalId>
+        <label>Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Balance_s_Snapshot__c</fullName>
+        <externalId>false</externalId>
+        <label>Balance&apos;s Snapshot</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Bank_Name__c</fullName>
+        <description>Name of the bank to which the check belongs</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the bank to which the check belongs</inlineHelpText>
+        <label>Bank Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Borrower_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Borrower Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Cheque_Date__c</fullName>
+        <description>Date of the cheque submitted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of the cheque submitted</inlineHelpText>
+        <label>Cheque Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Cheque_Number__c</fullName>
+        <description>Captures the check number or transaction reference</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Captures the check number or transaction reference</inlineHelpText>
+        <label>Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Cleared__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this loan payment transaction is supervised or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if this loan payment transaction is supervised or not.</inlineHelpText>
+        <label>Cleared</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Clearing_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Clearing Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DM_Closure_Tolerance_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this Payment is created for closure Tolerance amount</description>
+        <externalId>false</externalId>
+        <label>Closure Tolerance Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_10__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_1__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_2__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_3__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_4__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_5__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_6__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_7__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 7</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_8__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Field_9__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Custom Field 6</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Custom_Logic__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Custom Payment Processing Logic</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Deposit_Snapshot__c</fullName>
+        <description>This field stores the snapshot of state of multiple deposits before the payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field stores the snapshot of multiple deposits before the payment.</inlineHelpText>
+        <label>Deposit Snapshot</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Deposit__c</fullName>
+        <description>Deposit component for the payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the deposit amount collected for the loan</inlineHelpText>
+        <label>Deposit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Dues_Snapshot__c</fullName>
+        <defaultValue>&quot;&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Dues Snapshot</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Early_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Payment before the scheduled Payment Date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Payment before the scheduled Payment Date</inlineHelpText>
+        <label>Early Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Early_Total_Repayment_of_the_Loan__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>After a loan is disbursed, a client can at any time repay the loan in a single payment.
+he system calculates the total amount due as of the current date, including principal, interest, fees and penalties.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>After a loan is disbursed, a client can at any time repay the loan in a single payment.
+the system calculates the total amount due as of the current date, including principal, interest, fees and penalties.</inlineHelpText>
+        <label>Pay-Off</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Excess__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Excess</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Expected_TDS__c</fullName>
+        <description>Expected TDS Amount to be applied.It is used for APS</description>
+        <externalId>false</externalId>
+        <label>Expected TDS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>DM External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Fee_Snapshot__c</fullName>
+        <description>This field stores an encrypted string of all paid &apos;Overdue Fees&apos; and &apos;Charges&apos;. No need to add &apos;Due Fees&apos; because it is being recorded as a part of &apos;Installment Snapshot&apos; field on the installment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field stores an encrypted string of all paid &apos;Overdue Fees&apos; and &apos;Charges&apos;. No need to add &apos;Due Fees&apos; because it is being recorded as a part of &apos;Installment Snapshot&apos; field on the installment.</inlineHelpText>
+        <label>Fee Snapshot</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Fees__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Fees component for this payment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the fees amount collected for the loan</inlineHelpText>
+        <label>Fees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Force_No_Loan_Payoff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Halt closing of loan, even if the obligations are met</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is added to handle the cases where we may want to keep the loan accounts open even if the loan obligations are met</inlineHelpText>
+        <label>Force No Loan Payoff</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_IOA__c</fullName>
+        <description>Storing the amount paid against Interest On Arrear for due Principal/Interest/IOA</description>
+        <externalId>false</externalId>
+        <label>IOA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Installment_Date__c</fullName>
+        <description>This field determines till which date the payment is made</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field determines till which date the payment is made</inlineHelpText>
+        <label>Installment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Installment_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field determines whether the current payment is installment payment or not</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field determines whether payment transaction is installment payment or not</inlineHelpText>
+        <label>Installment Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Interest_Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Interest Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Interest__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Interest component for this payment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Interest amount collected for the loan</inlineHelpText>
+        <label>Interest</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Internal_Accounting_Generated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Internal Accounting Generated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Investor_Rebate_Amount_On_Payoff__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the rebate to be paid to the investors on a Protect enabled contract in case of a payoff.</inlineHelpText>
+        <label>Investor Rebate Amount On Payoff</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Investor_Rebate_Amount_On_Refinance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the rebate to be paid to the investors on a Protect enabled contract in case of a refinance.</inlineHelpText>
+        <label>Investor Rebate Amount On Refinance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Investor_Rebate_Amount_On_Writeoff__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the rebate to be paid to the investors on a Protect enabled contract in case of a write off.</inlineHelpText>
+        <label>Investor Rebate Amount On Writeoff</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Ipt_Snapshot__c</fullName>
+        <description>It contains the snapshot of Open Ipt for flexi-Amz loans.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It contains the snapshot of Open Ipt for flexi-Amz loans.</inlineHelpText>
+        <label>Ipt Snapshot</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Is_Migrated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DM Is Migrated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Late_Charge_Interest__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Late Charge (Interest)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Late_Charge_Principal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Late Charge (Principal)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Loan_Snapshot__c</fullName>
+        <defaultValue>&quot;&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Loan Snapshot</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DM_Manual_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Manual Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Master_Archive_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that this is a master object record containing one or more child object records. Master object records may be archived but are not deleted by the system. This is automatically updated by the system. Do not update it manually.</inlineHelpText>
+        <label>Master Archive Object</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Migrated_Reversal_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Migrated Reversal Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Missed_Loan_Installment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Missed Loan Installment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Missed Loan Installment</inlineHelpText>
+        <label>Missed Loan Installment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Number_Of_Bills_Waived__c</fullName>
+        <description>Field used to count the number of bills waived by the transaction. Used only when the loan is protect enabled.</description>
+        <externalId>false</externalId>
+        <label>Number Of Bills Waived</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Other_Charges_Interest__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Charges (Interest)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Other_Charges_Principal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Charges (Principal)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Paid_to_Broker_Reversed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Paid to Broker Reversed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Paid_to_Broker__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To track whether this payment has been paid to Broker or not.</description>
+        <externalId>false</externalId>
+        <label>Paid to Broker</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Paid_to_Investor_Reversed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Paid to Investor Reversed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Paid_to_Investor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To track whether this payment has been paid to investor or not.</description>
+        <externalId>false</externalId>
+        <label>Paid to Investor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Partial_Payment_del__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Read only field. Checked when the payment is less than scheduled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Read only field. Checked when the payment is less than scheduled.</inlineHelpText>
+        <label>Partial Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Payment_Application_Mode__c</fullName>
+        <description>If the value is Future Dues, Reserve Amount For Next Due will be used for satisfying Bills. Otherwise, Reserve Amount For Next Due will not be used for satisfying Bills.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Possible values are
+1) Future Dues
+2) Current Dues
+Future Dues is used when Loan Payments should be used to satisfy future dues.
+Current Dues is used when Loan Payments should only be used to satisfy present dues.</inlineHelpText>
+        <label>Payment Application Mode</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM_Future Dues</fullName>
+                    <default>false</default>
+                    <label>DM_Future Dues</label>
+                </value>
+                <value>
+                    <fullName>DM_Current Dues</fullName>
+                    <default>false</default>
+                    <label>DM_Current Dues</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Payment_Mode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DM Payment Mode</label>
+        <referenceTo>loan__Payment_Mode__c</referenceTo>
+        <relationshipLabel>DM Loan Payment Transactions</relationshipLabel>
+        <relationshipName>DM_Loan_Payment_Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DM_Payment_Type__c</fullName>
+        <description>This field is used to determine the reason for which payment is created.Reason can be to settle the loan, sell the loan or waive the interest.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to determine the reason for which payment is created.Reason can be to settle the loan, sell the loan or waive the interest.</inlineHelpText>
+        <label>Payment Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DM_Waived</fullName>
+                    <default>false</default>
+                    <label>DM_Waived</label>
+                </value>
+                <value>
+                    <fullName>DM_Settled</fullName>
+                    <default>false</default>
+                    <label>DM_Settled</label>
+                </value>
+                <value>
+                    <fullName>DM_Sold</fullName>
+                    <default>false</default>
+                    <label>DM_Sold</label>
+                </value>
+                <value>
+                    <fullName>DM_Regular</fullName>
+                    <default>true</default>
+                    <label>DM_Regular</label>
+                </value>
+                <value>
+                    <fullName>DM_Rebate</fullName>
+                    <default>false</default>
+                    <label>DM_Rebate</label>
+                </value>
+                <value>
+                    <fullName>DM_Closure-Tolerance</fullName>
+                    <default>false</default>
+                    <label>DM_Closure-Tolerance</label>
+                </value>
+                <value>
+                    <fullName>DM_Principal Adjustment - Sub</fullName>
+                    <default>false</default>
+                    <label>DM_Principal Adjustment - Sub</label>
+                </value>
+                <value>
+                    <fullName>DM_Excess</fullName>
+                    <default>false</default>
+                    <label>DM_Excess</label>
+                </value>
+                <value>
+                    <fullName>DM_Write-Off Recovery</fullName>
+                    <default>false</default>
+                    <label>DM_Write-Off Recovery</label>
+                </value>
+                <value>
+                    <fullName>DM_Refinance</fullName>
+                    <default>false</default>
+                    <label>DM_Refinance</label>
+                </value>
+                <value>
+                    <fullName>DM_Deposit Payment</fullName>
+                    <default>false</default>
+                    <label>DM_Deposit Payment</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DM_Payoff_Balance__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the amount needed to payoff the loan after this payment has been applied.</inlineHelpText>
+        <label>Payoff Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Principal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the Principal amount collected for the loan</inlineHelpText>
+        <label>Principal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Rebate_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the rebate paid to the borrower in case of a Protect Enabled contract.</inlineHelpText>
+        <label>Rebate Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Rebate_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this is Rebate Payment, generated for closing loan balance</description>
+        <externalId>false</externalId>
+        <label>Rebate Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Receipt_Amount__c</fullName>
+        <description>Amount without the TDS portion</description>
+        <externalId>false</externalId>
+        <label>Receipt Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Receipt_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>DM Receipt Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Receipt_ID__c</fullName>
+        <description>Receipt ID</description>
+        <displayFormat>RTRID-{0000000000}</displayFormat>
+        <externalId>false</externalId>
+        <inlineHelpText>Receipt ID</inlineHelpText>
+        <label>Receipt ID</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>DM_Rejected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rejected</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Rejection_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which the transaction got rejected.</inlineHelpText>
+        <label>Failure Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Rejection_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejection Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Reschedule_Threshold_Crossed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be checked when transaction amount on LPT is higher than reschedule threshold amount and hence LPT will trigger reschedule on loan.</inlineHelpText>
+        <label>Reschedule Threshold Crossed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Retried__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, it means that the transaction has been retried.</inlineHelpText>
+        <label>Retried</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Retry_Attempt_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of retry attempts will be complete with this transaction for the original one.</inlineHelpText>
+        <label>Retry Attempt Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Retry_On__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which this transaction is to be retried.</inlineHelpText>
+        <label>Next Retry On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Reversal_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reversal Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Reversed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reversed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Sent_To_ACH_On__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date the transaction was sent to ACH. The lock period for clearing is counted from this date.</inlineHelpText>
+        <label>Sent To ACH On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Sent_to_ACH__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sent to ACH</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Skip_Validation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Skip Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Summary_Record_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The ID of the summary transaction record within which this record is summarized. This is automatically generated by the system. Do no update it manually.</inlineHelpText>
+        <label>Summary Record Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Summary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Selection indicates that the record is a summary transaction record for data archival purpose. This is automatically updated by the system. Do no update it manually.</inlineHelpText>
+        <label>Summary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Charges_Interest__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Charges (Interest)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Total_Charges_Principal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Charges (Principal)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Transaction_Amount__c</fullName>
+        <description>Transaction Amount</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the sum of Interest, Principal and Fees</inlineHelpText>
+        <label>Transaction Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DM_Transaction_Creation_Date__c</fullName>
+        <description>This field will determine the creation date of Loan Payment Transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will determine the creation date of Loan Payment Transaction.</inlineHelpText>
+        <label>Transaction Creation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Transaction_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DM_Transaction_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Transaction Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DM_Write_Off_Recovery_Payment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this only if you wish to recover payments for written off loans</inlineHelpText>
+        <label>Write Off Recovery Payment</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DM_waived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this LPT is a waived LPT. If marked as waived the TXN should be used as for loan state change but not for actual cash movement as waived txn are to be ignored for cash movements</description>
+        <externalId>false</externalId>
+        <label>Waived</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>DM Loan Payment Transaction</label>
+    <nameField>
+        <label>DM  Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>DM Loan Payment Transactions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>
