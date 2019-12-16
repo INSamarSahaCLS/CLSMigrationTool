@@ -2,23 +2,42 @@
 * Author: Samar Saha
 * Date: Oct - 2019
 * Update History - 
+    1. Updated code to handle large no of records in batch class.
+    2. Updated code to fetch records from Migration_Tool_Configuration__c object
 *****************************************************************************************************************/ 
 public with sharing class INV_DM_SqlQueryGenerator 
 {
-    public String GetQueryStringForValidationStart(){
-    
+    public String getQueryStringForValidationStart(){    
         List<Migration_Tool_Configuration__c> configList = [Select Id, 
                                                              Active__c, 
                                                              Is_Child__c, 
                                                              Object_API_Name__c, 
                                                              Object_Name__c,                                                              
                                                              Query_String__c 
-                                                             from Migration_Tool_Configuration__c where Active__c = True and Execute_in_Start__c = True and Project_Name__c = 'Test'];
+                                                             from Migration_Tool_Configuration__c where 
+                                                             Active__c = True 
+                                                             and Execute_in_Start__c = True 
+                                                             and Job_Type__c = 'Validation'];
                                                              
         return configList[0].Query_String__c;
     }
     
-    public List<DM_Loan_Account__c> GetContractsForCurrentScope(List<DM_Loan_Account__c> dmList)
+    public String getQueryStringForMigrationStart(){    
+        List<Migration_Tool_Configuration__c> configList = [Select Id, 
+                                                             Active__c, 
+                                                             Is_Child__c, 
+                                                             Object_API_Name__c, 
+                                                             Object_Name__c,                                                              
+                                                             Query_String__c 
+                                                             from Migration_Tool_Configuration__c where 
+                                                             Active__c = True 
+                                                             and Execute_in_Start__c = True 
+                                                             and Job_Type__c = 'Migration'];
+                                                             
+        return configList[0].Query_String__c;
+    }
+    
+    public List<DM_Loan_Account__c> getContractsForCurrentValidationScope(List<DM_Loan_Account__c> dmList)
     {
         List<DM_Loan_Account__c> dmLoanScopeList = new List<DM_Loan_Account__c>();
         string query ='';
@@ -36,7 +55,9 @@ public with sharing class INV_DM_SqlQueryGenerator
                                                              Object_Name__c, 
                                                              Query_Limit__c, 
                                                              Query_String__c 
-                                                             from Migration_Tool_Configuration__c where Active__c = True and Execute_in_Start__c = False and Project_Name__c = 'Test'];
+                                                             from Migration_Tool_Configuration__c where 
+                                                             Active__c = True and 
+                                                             Execute_in_Start__c = False];
                                                              
         for(Migration_Tool_Configuration__c con : configList){
             if(con.Is_Child__c == True){
@@ -50,9 +71,11 @@ public with sharing class INV_DM_SqlQueryGenerator
         }
         
         query = query.removeEnd(',');                                       
-        finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
+        /*finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
                      ' where Migration_status__c = \'' +status+ '\' '+ 
-                     ' and DM_Valid_Data__c = False';  
+                     ' and DM_Valid_Data__c = False and Id IN:'+ dmList;  */
+        finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
+                     ' where Id IN: dmList';
         system.debug('*** finalQuery --> ***' + finalQuery );
         
         //return finalQuery;
@@ -60,8 +83,9 @@ public with sharing class INV_DM_SqlQueryGenerator
         return dmLoanScopeList;           
     }
     
-    public String GetQueryStringForMigration()
+    public List<DM_Loan_Account__c> getContractsForCurrentMigrationScope(List<DM_Loan_Account__c> dmList)
     {
+        List<DM_Loan_Account__c> dmLoanScopeList = new List<DM_Loan_Account__c>();
         string query ='';
         string parent='';
         string status='pending';
@@ -77,7 +101,9 @@ public with sharing class INV_DM_SqlQueryGenerator
                                                              Object_Name__c, 
                                                              Query_Limit__c, 
                                                              Query_String__c 
-                                                             from Migration_Tool_Configuration__c where Active__c = True and Execute_in_Start__c = False and Project_Name__c = 'Test'];
+                                                             from Migration_Tool_Configuration__c where 
+                                                             Active__c = True and 
+                                                             Execute_in_Start__c = False];
                                                              
         for(Migration_Tool_Configuration__c con : configList){
             if(con.Is_Child__c == True){
@@ -92,11 +118,12 @@ public with sharing class INV_DM_SqlQueryGenerator
         
         query = query.removeEnd(',');                                       
         finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
-                     '  where Migration_Status__c = \'' + status + '\' ' + 
-                     ' and DM_Is_Migrated__c = False and DM_Valid_Data__c = True';  
+                     ' where Id IN: dmList';  
                      
         system.debug('*** finalQuery --> ***' + finalQuery );
         
-        return finalQuery;                       
+        //return finalQuery;     
+        dmLoanScopeList = Database.query(finalQuery);
+        return dmLoanScopeList;                      
     }   
 }

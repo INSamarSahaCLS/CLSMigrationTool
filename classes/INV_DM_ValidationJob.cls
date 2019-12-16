@@ -31,7 +31,7 @@ Global class INV_DM_ValidationJob implements Database.Batchable<sObject>
     {
         List<DM_Loan_Account__c> dmLoanScopeList = new List<DM_Loan_Account__c>();
         INV_DM_SqlQueryGenerator sqlQuery = new INV_DM_SqlQueryGenerator();         
-        dmLoanScopeList = sqlQuery.GetContractsForCurrentScope(dmList);
+        dmLoanScopeList = sqlQuery.getContractsForCurrentValidationScope(dmList);
         
         system.debug('scope list '+dmList.size()+ 'list '+dmLoanScopeList);                      
         INV_DM_Validation handler = new INV_DM_Validation();
