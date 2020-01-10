@@ -40,7 +40,7 @@ public with sharing class INV_DM_SqlQueryGenerator
     public List<DM_Loan_Account__c> getContractsForCurrentValidationScope(List<DM_Loan_Account__c> dmList)
     {
         List<DM_Loan_Account__c> dmLoanScopeList = new List<DM_Loan_Account__c>();
-        string query ='';
+        string query =''; 
         string parent='';
         string status='Pending';
         
@@ -74,12 +74,19 @@ public with sharing class INV_DM_SqlQueryGenerator
         /*finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
                      ' where Migration_status__c = \'' +status+ '\' '+ 
                      ' and DM_Valid_Data__c = False and Id IN:'+ dmList;  */
-        finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
+                     
+        if(query != ''){   
+            finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
                      ' where Id IN: dmList';
+        }else{
+            finalQuery = 'Select '+ parentField + ' from ' + parentObjectAPIName + 
+                         ' where Id IN: dmList';  
+        }
+        
         system.debug('*** finalQuery --> ***' + finalQuery );
         
         //return finalQuery;
-        dmLoanScopeList = Database.query(finalQuery);
+        dmLoanScopeList = Database.query(finalQuery); 
         return dmLoanScopeList;           
     }
     
@@ -108,6 +115,7 @@ public with sharing class INV_DM_SqlQueryGenerator
         for(Migration_Tool_Configuration__c con : configList){
             if(con.Is_Child__c == True){
                 query =  query + '(' + con.Query_String__c + '),';
+                system.debug('*** query child ***' + query);
             }
             else{
                 parentField = con.Query_String__c;
@@ -116,9 +124,14 @@ public with sharing class INV_DM_SqlQueryGenerator
             }        
         }
         
-        query = query.removeEnd(',');                                       
-        finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
-                     ' where Id IN: dmList';  
+        query = query.removeEnd(',');    
+        if(query != ''){                                   
+            finalQuery = 'Select '+ parentField + ',' + query + ' from ' + parentObjectAPIName + 
+                         ' where Id IN: dmList';  
+        }else{
+            finalQuery = 'Select '+ parentField + ' from ' + parentObjectAPIName + 
+                         ' where Id IN: dmList';  
+        }
                      
         system.debug('*** finalQuery --> ***' + finalQuery );
         

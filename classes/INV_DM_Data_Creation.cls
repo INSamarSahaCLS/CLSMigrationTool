@@ -70,7 +70,7 @@ public class INV_DM_Data_Creation {
                 update errorUpdate;
             }else{
                 Dm_Loan_Account__c dmLoanSuccess = new Dm_loan_Account__c(Id = dmloan.Id, 
-                                                                          migration_status__c = 'Success', 
+                                                                          migration_status__c = 'Migrated', 
                                                                           DM_Error__c = '', 
                                                                           DM_Invalid_Data__c = false,
                                                                           DM_valid_Data__c = True,                                                                 
@@ -305,6 +305,6 @@ public class INV_DM_Data_Creation {
                 Database.rollback(sp);
             }//END Catch   
         }
-    }//END insertAPS
+    }//END insertIPT
     
 }//END

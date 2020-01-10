@@ -192,7 +192,7 @@ Global class INV_DM_Validation
         return validationWrapperList;
         }   
         
-        
+    /*    
     public void testcoverage()
     {
         Integer a = 0, b = 0, c = 0;
@@ -412,5 +412,5 @@ Global class INV_DM_Validation
         a = b+c;
         a = b+c;
         a = b+c;
-    }             
+    }*/             
 }

@@ -198,5 +198,66 @@ public class INV_DM_TestHelper {
         repaySch.DM_Balance__c = 800;
         repaySch.DM_Paid_Principal__c=amount;                                              
         return repaySch;                                                
-    }//END CreateAmzScheduleData                                                    
+    }//END CreateAmzScheduleData  
+    
+    public static DM_Interest_Posting_Transaction__c CreateIPTData(DM_Loan_Account__c loanAccount) {
+        DM_Interest_Posting_Transaction__c  ipt = new DM_Interest_Posting_Transaction__c();
+        ipt.DM_CL_Contract__c = loanAccount.Id;
+        ipt.DM_Accrued_to_Investor__c = True;
+        ipt.DM_Due_Amount__c = 40.00 ;
+        ipt.DM_Balance__c = 800;
+        ipt.DM_Capitalized__c =True;                                              
+        return ipt;                                                
+    }//END CreateAmzScheduleData  
+    
+    public static List<Migration_Tool_Configuration__c> CreateMigrationToolConfigRecords() {
+        List<Migration_Tool_Configuration__c> mtc = new List<Migration_Tool_Configuration__c>();
+        
+        String validation = 'Select Id from DM_Loan_Account__c where Migration_status__c = \'Pending\' and DM_Valid_Data__c = False';
+        String migration = 'Select Id from DM_Loan_Account__c where Migration_status__c = \'Validated\' and DM_Is_Migrated__c = False and DM_Valid_Data__c = True';
+        String contract = 'Id, Product_Type__c, DM_Account__c, DM_Overdue_Principal__c,DM_Overdue_Interest__c, DM_Contract_Type__c , DM_Product__c ,DM_Product_Type__c , DM_Loan_Status__c , DM_Application_Date__c ,DM_Disbursal_Date__c , DM_Expected_Disbursal_Date__c , DM_Loan_Amount__c,DM_Expected_Repayment_Start_Date__c , DM_Number_of_Installments__c ,DM_Frequency_of_Loan_Payment__c ,DM_Next_Installment_Date__c,DM_Contractual_Interest_Rate__c , DM_Interest_Remaining__c ,DM_Fees_Remaining__c, DM_Principal_Remaining__c , DM_Rate_Change_Dt_Last__c,DM_Pmt_Amt_Cur__c , DM_Last_Installment_Date__c, DM_Payment_Amount__c,DM_Disbursal_Amount__c, DM_Disbursed_Amount__c,DM_Interest_Only_Period__c,DM_Interest_Type__c,DM_Payment_Application_Mode__c,DM_Time_Counting_Method__c,                        DM_Interest_Calculation_Method__c, DM_Last_Accrual_Date__c,DM_Next_Due_Generation_Date__c, DM_Term_Cur__c, DM_Due_Day__c,                             DM_Maturity_Date_Current__c, DM_Contractual_Due_Day__c, DM_First_Installment_Date__c,DM_Second_Installment_Date__c, DM_Accrual_Start_Date__c, DM_Rate_Change_Dt_Next__c,DM_Oldest_Due_Date__c, DM_Disbursal_Status__c, DM_Branch__c, DM_Fee_Set__c,DM_Reschedule_Option_On_Excess_Payment__c, DM_Grace_Period_for_Repayments__c,DM_Delinquency_Grace_Days__c, DM_Pre_Bill_Days__c, DM_Write_off_Tolerance_Amount__c,DM_Contact__c, DM_Invalid_Data__c, DM_Valid_Data__c, DM_Error__c, Migration_Status__c,DM_Interest_Rate__c, DM_Fees_Paid__c, DM_Interest_Paid__c, DM_Principal_Paid__c,DM_Migration_Date__c, Second_Payment_Date_Required_for_Twice_p__c, DM_Balloon_Payment__c,DM_Interest_estimated__c, DM_Borrower_ACH__c, DM_Loan_Account_External_Id__c, DM_APR__c, DM_Interest_Rate_Last__c';
+        String amort = 'Select Id, DM_Due_Date__c, DM_Due_Principal__c, DM_Due_Interest__c, DM_Balance__c, DM_Loan_Product__c, DM_External_Id__c from DM_Repayment_Schedules__r';
+        String rss = 'Select Id, DM_RSS_Seq__c, DM_RSS_Repayment_Dt__c, DM_RSS_Repayment_Amt__c, DM_RSS_No_Of_Pmts__c, DM_CL_Contract__c, DM_External_Id__c from DM_Repayment_Schedule_Summarys__r';
+        String LPT = 'Select Id, CL_Contract__c, DM_Payment_Mode__c, DM_Transaction_Amount__c, DM_Receipt_Date__c, DM_Cleared__c , DM_Rejected__c, DM_Reversed__c, DM_Principal__c, DM_Interest__c, DM_Fees__c, DM_Transaction_Date__C, DM_Transaction_time__C, DM_Clearing_Date__c, DM_Payoff_Balance__c, DM_Balance__c, DM_Sent_to_ACH__c, DM_Sent_To_ACH_On__c from DM_Loan_Payment_Transactions__r';
+        String LDT = 'Select Id, DM_CL_Contract__c, DM_ACH_Filename__c, DM_Archived__c, DM_Bank_Account__c, DM_Check__c, DM_Cleared__c, DM_Contribution_From_Excess__c, DM_Custom_Logic__c, Dm_Disbursal_Date__c, DM_Disbursal_Time__c, DM_Disbursed_Amt__c, DM_Loan_Disbursal_Transaction_Type__c, DM_Financed_Amount__c, DM_Interest_Rate__c, DM_Internal_Accounting_Generated__c, DM_Loan_Snapshot__c, DM_Master_Archive_Object__c, Dm_Mode_Of_Payment__c, DM_Number_Of_Interest_Only_Payments__c, DM_Reference__c, DM_Rejected__c, DM_Reversed__c, DM_Summary__c, DM_Pre_Paid_Fee__c, DM_Summary_Record_Id__c, DM_Refinanced_Amount__c, DM_Sent_To_ACH__c, DM_Sent_To_ACH_On__c from DM_Loan_Disbursal_Transactions__r';
+        String APS = 'Select id, DM_CL_Contract__c, DM_Bank_Account__c, DM_Debit_Date__c, DM_Transaction_Amount__c, DM_Type__c, DM_Amount_Type__c, DM_Payment_Mode__c, DM_Active__c, DM_Frequency__c, DM_Debit_Day__c, DM_Recurring_ACH_Start_Date__c, DM_Recurring_ACH_End_Date__c, DM_Second_Payment_Date__c from DM_Automated_Payment_Setups__r';
+        String charge = 'Select Id, DM_Date__c, DM_Fee__c, DM_Paid__c, DM_Waive__c, DM_Original_Amount__c, DM_CL_Contract__c from DM_Charges__r';
+        String IPT = 'Select Id, DM_Accrued_to_Investor__c, DM_Balance__c, DM_Capitalized__c, DM_Discarded__c, DM_Due_Amount__c from DM_Interest_Posting_Transactions__r';  
+                          
+        Migration_Tool_Configuration__c toolConfigValidation =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=True, Is_Child__c=false, Object_API_Name__c='DM_Loan_Account__c', 
+                                     Object_Name__c='DM CL Contract', Query_String__c=validation, Job_Type__c='Validation');
+        Migration_Tool_Configuration__c toolConfigMigration =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=True, Is_Child__c=false, Object_API_Name__c='DM_Loan_Account__c', 
+                                     Object_Name__c='DM CL Contract', Query_String__c=migration, Job_Type__c='Migration');
+        Migration_Tool_Configuration__c toolConfigContract =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=false, Object_API_Name__c='DM_Loan_Account__c', 
+                                     Object_Name__c='DM CL Contract', Query_String__c=contract, Job_Type__c='Both');
+        Migration_Tool_Configuration__c toolConfigAmort =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Repayment_Schedule__c', 
+                                     Object_Name__c='DM Amortization Schedule', Query_String__c=amort, Job_Type__c='Both');   
+        Migration_Tool_Configuration__c toolConfigrss =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Repayment_Schedule_Summary__c', 
+                                     Object_Name__c='DM Repayment Schedule', Query_String__c=rss, Job_Type__c='Both');     
+        Migration_Tool_Configuration__c toolConfigLPT =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Loan_Payment_Transaction__c', 
+                                     Object_Name__c='DM Loan Payment Transaction', Query_String__c=LPT, Job_Type__c='Both');  
+        Migration_Tool_Configuration__c toolConfigLDT =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Loan_Disbursal_Transaction__c', 
+                                     Object_Name__c='DM Loan Disbursal Transaction', Query_String__c=LDT, Job_Type__c='Both');  
+        Migration_Tool_Configuration__c toolConfigAPS =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Automated_Payment_Setup__c', 
+                                     Object_Name__c='DM Automated Payment Setup', Query_String__c=APS, Job_Type__c='Both');  
+        Migration_Tool_Configuration__c toolConfigCharge =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Charge__c', 
+                                     Object_Name__c='DM Charge', Query_String__c=charge, Job_Type__c='Both');    
+        Migration_Tool_Configuration__c toolConfigIPT =new Migration_Tool_Configuration__c(Active__c=true, Execute_in_Start__c=False, Is_Child__c=True, Object_API_Name__c='DM_Interest_Posting_Transaction__c', 
+                                     Object_Name__c='DM Interest Posting Transaction', Query_String__c=IPT, Job_Type__c='Both');                               
+                                     
+        mtc.add(toolConfigValidation);
+        mtc.add(toolConfigMigration);
+        mtc.add(toolConfigContract);
+        mtc.add(toolConfigamort);
+        mtc.add(toolConfigrss);
+        mtc.add(toolConfigLPT);
+        mtc.add(toolConfigLDT);
+        mtc.add(toolConfigAPS);
+        mtc.add(toolConfigcharge);
+        mtc.add(toolConfigIPT);
+        
+        return mtc;                                                   
+    }//END CreateMigrationToolConfigRecords
+    
+                                                      
 }//END DM_TestHelper
