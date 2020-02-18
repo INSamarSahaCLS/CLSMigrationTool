@@ -111,14 +111,14 @@ public class INV_DM_ToolTest{
         dmloan3.DM_Valid_Data__c = true;
         dmloan3.Migration_status__c = 'Validated';
         dmloan3.DM_Is_Migrated__c = false; 
-        dmloan3.INV_CL__DM_Product_Type__c=null;       
+        dmloan3.DM_Product_Type__c=null;       
         dmLoanList.add(dmloan3);
         
         DM_Loan_Account__c dmloan4 = INV_DM_TestHelper.createDMLOC(difficultLP,0.0,b1,dummyFeeSet,dummyOffice,5,'Declining Balance');
         dmloan4.DM_Valid_Data__c = true;
         dmloan4.Migration_status__c = 'Validated';
         dmloan4.DM_Is_Migrated__c = false;
-        dmloan4.INV_CL__DM_Loan_Amount__c=null;
+        dmloan4.DM_Loan_Amount__c=null;
         dmLoanList.add(dmloan4);
         
         DM_Loan_Account__c dmloan5 = INV_DM_TestHelper.createDMLOC(difficultLP,0.0,b1,dummyFeeSet,dummyOffice,5,'Declining Balance');
@@ -139,7 +139,7 @@ public class INV_DM_ToolTest{
         DM_Loan_Disbursal_Transaction__c ldt1 =  INV_DM_TestHelper.fundLoan(dmLoan, Date.Today(), pmode,bankAccount);
         DM_Loan_Disbursal_Transaction__c ldt2 =  INV_DM_TestHelper.fundLoan(dmloan2, Date.Today(), pmode,bankAccount);
         DM_Loan_Disbursal_Transaction__c ldt3 =  INV_DM_TestHelper.fundLoan(dmloan5, Date.Today(), pMode,bankAccount);  
-        ldt3.INV_CL__Dm_Disbursal_Date__c=null;             
+        ldt3.Dm_Disbursal_Date__c=null;             
         ldtList.add(ldt1);
         ldtList.add(ldt2);
         ldtList.add(ldt3);
@@ -180,8 +180,8 @@ public class INV_DM_ToolTest{
                                                                                             dmLoan2, '', pMode, Date.Today(),1);     
         DM_Automated_Payment_Setup__c aps3 =  INV_DM_TestHelper.createAutomatedPaymentSetup('DO it later', '', bankAccount,
                                                                                             dmloan6, '', pMode, Date.Today(),1);         
-        aps3.INV_CL__DM_Debit_Day__c = null;
-        aps3.INV_CL__DM_Type__c = null;   
+        aps3.DM_Debit_Day__c = null;
+        aps3.DM_Type__c = null;   
         apsList.add(aps1);
         apsList.add(aps2);
         apsList.add(aps3);
@@ -684,7 +684,7 @@ public class INV_DM_ToolTest{
         List<DM_Loan_Payment_Transaction__c> lptList =new List<DM_Loan_Payment_Transaction__c>();
         DM_Loan_Payment_Transaction__c lpt1 = INV_DM_TestHelper.createLoanPayment(dmloan1.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt1.DM_Transaction_Date__c = system.today();
-        lpt1.INV_CL__CL_Contract__c=dmloan1.Id;
+        lpt1.CL_Contract__c=dmloan1.Id;
         lpt1.DM_Transaction_Amount__c = 1000;           
         lpt1.DM_Receipt_Date__c= Date.today();                                                                
         lpt1.DM_Interest__c = 4;      
@@ -698,7 +698,7 @@ public class INV_DM_ToolTest{
         
         DM_Loan_Payment_Transaction__c lpt2 = INV_DM_TestHelper.createLoanPayment(dmloan1.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt2.DM_Transaction_Date__c = system.today();
-        lpt2.INV_CL__CL_Contract__c=dmloan1.Id;
+        lpt2.CL_Contract__c=dmloan1.Id;
         lpt2.DM_Transaction_Amount__c = 1000;           
         lpt2.DM_Receipt_Date__c= Date.today();                                                                
         lpt2.DM_Interest__c =4;      
@@ -712,7 +712,7 @@ public class INV_DM_ToolTest{
         
         DM_Loan_Payment_Transaction__c lpt3 = INV_DM_TestHelper.createLoanPayment(dmloan15.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt3.DM_Transaction_Date__c = system.today();
-        lpt3.INV_CL__CL_Contract__c=dmloan15.Id;
+        lpt3.CL_Contract__c=dmloan15.Id;
         lpt3.DM_Transaction_Amount__c =1000;           
         lpt3.DM_Receipt_Date__c= null;                                                                
         lpt3.DM_Interest__c =4;      
@@ -726,7 +726,7 @@ public class INV_DM_ToolTest{
         
         DM_Loan_Payment_Transaction__c lpt4 = INV_DM_TestHelper.createLoanPayment(dmloan16.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt4.DM_Transaction_Date__c = system.today();
-        lpt4.INV_CL__CL_Contract__c=dmloan16.Id;
+        lpt4.CL_Contract__c=dmloan16.Id;
         lpt4.DM_Transaction_Amount__c = 1000;           
         lpt4.DM_Receipt_Date__c= Date.today();                                                                
         lpt4.DM_Interest__c =4;      
@@ -740,7 +740,7 @@ public class INV_DM_ToolTest{
         
         DM_Loan_Payment_Transaction__c lpt5 = INV_DM_TestHelper.createLoanPayment(dmloan17.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt5.DM_Transaction_Date__c = system.today();
-        lpt5.INV_CL__CL_Contract__c=dmloan17.Id;
+        lpt5.CL_Contract__c=dmloan17.Id;
         lpt5.DM_Transaction_Amount__c = 1000;           
         lpt5.DM_Receipt_Date__c= Date.today();                                                                
         lpt5.DM_Interest__c =null;      
@@ -754,7 +754,7 @@ public class INV_DM_ToolTest{
         
         DM_Loan_Payment_Transaction__c lpt6 = INV_DM_TestHelper.createLoanPayment(dmloan18.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt6.DM_Transaction_Date__c = system.today();
-        lpt6.INV_CL__CL_Contract__c=dmloan18.Id;
+        lpt6.CL_Contract__c=dmloan18.Id;
         lpt6.DM_Transaction_Amount__c = 1000;           
         lpt6.DM_Receipt_Date__c= Date.today();                                                                
         lpt6.DM_Interest__c = 4;      
@@ -768,7 +768,7 @@ public class INV_DM_ToolTest{
         
         DM_Loan_Payment_Transaction__c lpt7 = INV_DM_TestHelper.createLoanPayment(dmloan19.Id, 10000.00,Date.today(),aPS, pymentmode, null);
         lpt7.DM_Transaction_Date__c = system.today();
-        lpt7.INV_CL__CL_Contract__c=dmloan19.Id;
+        lpt7.CL_Contract__c=dmloan19.Id;
         lpt7.DM_Transaction_Amount__c = 1000;           
         lpt7.DM_Receipt_Date__c= Date.today();                                                                
         lpt7.DM_Interest__c = 4;      
@@ -784,8 +784,8 @@ public class INV_DM_ToolTest{
         List<DM_Loan_Account__c> dmloanList2 = [select id,DM_Interest_Calculation_Method__c,DM_Time_Counting_Method__c ,DM_Product__c  ,DM_Product_Type__c  ,
                                                 DM_Number_of_Installments__c,DM_Grace_Period_for_Repayments__c,DM_Delinquency_Grace_Days__c ,DM_Pre_Bill_Days__c ,DM_Loan_Amount__c ,
                                                 DM_Contractual_Interest_Rate__c ,DM_Account__c ,DM_Contact__c ,DM_Due_Day__c ,DM_Expected_Repayment_Start_Date__c,DM_Expected_Disbursal_Date__c,
-                                                INV_CL__Batch_Type__c,(Select id,DM_Transaction_Date__c,DM_Transaction_Amount__c,DM_Receipt_Date__c,DM_Interest__c,DM_Automated_Payment_Setup__c,
-                                                                       DM_Payment_Mode__c,INV_CL__DM_Cleared__c,DM_Principal__c,DM_Fees__c,DM_Transaction_Time__c,INV_CL__DM_Clearing_Date__c from DM_Loan_Payment_Transactions__r) from DM_Loan_Account__c];              
+                                                Batch_Type__c,(Select id,DM_Transaction_Date__c,DM_Transaction_Amount__c,DM_Receipt_Date__c,DM_Interest__c,DM_Automated_Payment_Setup__c,
+                                                                       DM_Payment_Mode__c,DM_Cleared__c,DM_Principal__c,DM_Fees__c,DM_Transaction_Time__c,DM_Clearing_Date__c from DM_Loan_Payment_Transactions__r) from DM_Loan_Account__c];              
         
         
         INV_DM_ValidationWrapper dmWrapper2 = new INV_DM_ValidationWrapper(dmLoanList2[0].Id, True, 'SampleTest');
