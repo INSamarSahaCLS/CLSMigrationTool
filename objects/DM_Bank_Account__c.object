@@ -140,7 +140,7 @@
         <label>DM Account</label>
         <referenceTo>Account</referenceTo>
         <relationshipLabel>Bank Accounts</relationshipLabel>
-        <relationshipName>Bank_Accountss</relationshipName>
+        <relationshipName>Bank_Accounts</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
@@ -309,7 +309,7 @@
     </fields>
     <fields>
         <fullName>DM_External_Id__c</fullName>
-        <externalId>true</externalId>
+        <externalId>false</externalId>
         <label>DM External Id</label>
         <length>100</length>
         <required>false</required>
@@ -368,6 +368,11 @@
         <type>Checkbox</type>
     </fields>
     <label>DM Bank Account</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>DM Bank Account Name</label>
         <type>Text</type>

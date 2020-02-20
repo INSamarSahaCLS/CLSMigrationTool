@@ -52,6 +52,17 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
+        <fullName>Batch_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Batch No</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Batch_Type__c</fullName>
         <externalId>false</externalId>
         <label>Batch Type</label>
@@ -1973,59 +1984,59 @@ Single-Payment</inlineHelpText>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>DM_Daily</fullName>
+                    <fullName>Daily</fullName>
                     <default>false</default>
-                    <label>DM_Daily</label>
+                    <label>Daily</label>
                 </value>
                 <value>
-                    <fullName>DM_Weekly</fullName>
+                    <fullName>Weekly</fullName>
                     <default>false</default>
-                    <label>DM_Weekly</label>
+                    <label>Weekly</label>
                 </value>
                 <value>
-                    <fullName>DM_Bi-weekly</fullName>
+                    <fullName>Bi-weekly</fullName>
                     <default>false</default>
-                    <label>DM_Bi-weekly</label>
+                    <label>Bi-weekly</label>
                 </value>
                 <value>
-                    <fullName>DM_Semi-Monthly</fullName>
+                    <fullName>Semi-Monthly</fullName>
                     <default>false</default>
-                    <label>DM_Semi-Monthly</label>
+                    <label>Semi-Monthly</label>
                 </value>
                 <value>
-                    <fullName>DM_Monthly</fullName>
+                    <fullName>Monthly</fullName>
                     <default>true</default>
-                    <label>DM_Monthly</label>
+                    <label>Monthly</label>
                 </value>
                 <value>
-                    <fullName>DM_Bi-Monthly</fullName>
+                    <fullName>Bi-Monthly</fullName>
                     <default>false</default>
-                    <label>DM_Bi-Monthly</label>
+                    <label>Bi-Monthly</label>
                 </value>
                 <value>
-                    <fullName>DM_Quarterly</fullName>
+                    <fullName>Quarterly</fullName>
                     <default>false</default>
-                    <label>DM_Quarterly</label>
+                    <label>Quarterly</label>
                 </value>
                 <value>
-                    <fullName>DM_Semi-Annual</fullName>
+                    <fullName>Semi-Annual</fullName>
                     <default>false</default>
-                    <label>DM_Semi-Annual</label>
+                    <label>Semi-Annual</label>
                 </value>
                 <value>
-                    <fullName>DM_Annual</fullName>
+                    <fullName>Annual</fullName>
                     <default>false</default>
-                    <label>DM_Annual</label>
+                    <label>Annual</label>
                 </value>
                 <value>
-                    <fullName>DM_Single-Payment</fullName>
+                    <fullName>Single-Payment</fullName>
                     <default>false</default>
-                    <label>DM_Single-Payment</label>
+                    <label>Single-Payment</label>
                 </value>
                 <value>
-                    <fullName>DM_Semi-Monthly-PD</fullName>
+                    <fullName>Semi-Monthly-PD</fullName>
                     <default>false</default>
-                    <label>DM_Semi-Monthly-PD</label>
+                    <label>Semi-Monthly-PD</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -3524,29 +3535,29 @@ R = Revolving</inlineHelpText>
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>DM_Installment</fullName>
+                    <fullName>Installment</fullName>
                     <default>true</default>
-                    <label>DM_Installment</label>
+                    <label>Installment</label>
                 </value>
                 <value>
-                    <fullName>DM_Line of Credit</fullName>
+                    <fullName>Line of Credit</fullName>
                     <default>false</default>
-                    <label>DM_Line of Credit</label>
+                    <label>Line of Credit</label>
                 </value>
                 <value>
-                    <fullName>DM_Mortgage</fullName>
+                    <fullName>Mortgage</fullName>
                     <default>false</default>
-                    <label>DM_Mortgage</label>
+                    <label>Mortgage</label>
                 </value>
                 <value>
-                    <fullName>DM_Open Account</fullName>
+                    <fullName>Open Account</fullName>
                     <default>false</default>
-                    <label>DM_Open Account</label>
+                    <label>Open Account</label>
                 </value>
                 <value>
-                    <fullName>DM_Revolving</fullName>
+                    <fullName>Revolving</fullName>
                     <default>false</default>
-                    <label>DM_Revolving</label>
+                    <label>Revolving</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5558,14 +5569,19 @@ This will be checked/unchecked by the system and should not be modified by user.
                     <label>Pending</label>
                 </value>
                 <value>
-                    <fullName>Success</fullName>
+                    <fullName>Migrated</fullName>
                     <default>false</default>
-                    <label>Success</label>
+                    <label>Migrated</label>
                 </value>
                 <value>
                     <fullName>Failed</fullName>
                     <default>false</default>
                     <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Validated</fullName>
+                    <default>false</default>
+                    <label>Validated</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
@@ -5590,6 +5606,115 @@ This will be checked/unchecked by the system and should not be modified by user.
         <type>Date</type>
     </fields>
     <label>DM CL Contract</label>
+    <listViews>
+        <fullName>Failed</fullName>
+        <columns>NAME</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>DM_Valid_Data__c</columns>
+        <columns>DM_Error__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Migration_Status__c</field>
+            <operation>equals</operation>
+            <value>Failed</value>
+        </filters>
+        <label>Failed</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Invalid_Data</fullName>
+        <columns>NAME</columns>
+        <columns>DM_Invalid_Data__c</columns>
+        <columns>DM_Error__c</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>DM_Valid_Data__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DM_Valid_Data__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Migration_Status__c</field>
+            <operation>equals</operation>
+            <value>Migrated,Failed,Validated</value>
+        </filters>
+        <label>Invalid Data</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Migrated</fullName>
+        <columns>NAME</columns>
+        <columns>Batch_No__c</columns>
+        <columns>DM_Account__c</columns>
+        <columns>Product_Type__c</columns>
+        <columns>Batch_Type__c</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>Migrated_CL_Contract__c</columns>
+        <columns>DM_Disbursal_Status__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>DM_Loan_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Migration_Status__c</field>
+            <operation>equals</operation>
+            <value>Migrated</value>
+        </filters>
+        <label>Migrated</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Pending</fullName>
+        <columns>NAME</columns>
+        <columns>Batch_No__c</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>DM_Valid_Data__c</columns>
+        <columns>DM_Invalid_Data__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Migration_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filters>
+        <label>Pending</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sample_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>DM_Valid_Data__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Migration_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Pending,Migrated,Failed,Validated</value>
+        </filters>
+        <label>Sample Records</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Validated_Valid_Data</fullName>
+        <columns>NAME</columns>
+        <columns>Batch_No__c</columns>
+        <columns>DM_Valid_Data__c</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>DM_Invalid_Data__c</columns>
+        <columns>DM_Error__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DM_Valid_Data__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Migration_Status__c</field>
+            <operation>equals</operation>
+            <value>Validated</value>
+        </filters>
+        <label>Validated - Valid Data</label>
+        <language>en_US</language>
+    </listViews>
     <nameField>
         <label>DM Loan Con Name</label>
         <type>Text</type>

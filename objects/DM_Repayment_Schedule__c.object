@@ -290,7 +290,7 @@
     </fields>
     <fields>
         <fullName>DM_External_Id__c</fullName>
-        <externalId>true</externalId>
+        <externalId>false</externalId>
         <label>DM External Id</label>
         <length>100</length>
         <required>false</required>
@@ -633,6 +633,14 @@
         </valueSet>
     </fields>
     <label>DM Amortization Schedule</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Migration_Status__c</columns>
+        <columns>DM_Valid_Data__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>Dm Repayment Schedule Name</label>
         <type>Text</type>

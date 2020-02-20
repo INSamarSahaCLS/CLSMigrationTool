@@ -79,6 +79,36 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Job_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Job Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Both</fullName>
+                    <default>false</default>
+                    <label>Both</label>
+                </value>
+                <value>
+                    <fullName>Validation</fullName>
+                    <default>false</default>
+                    <label>Validation</label>
+                </value>
+                <value>
+                    <fullName>Migration</fullName>
+                    <default>false</default>
+                    <label>Migration</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Object_API_Name__c</fullName>
         <externalId>false</externalId>
         <label>Object API Name</label>
@@ -93,6 +123,17 @@
         <fullName>Object_Name__c</fullName>
         <externalId>false</externalId>
         <label>Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Object_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Object API Name</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -134,6 +175,37 @@
         <visibleLines>5</visibleLines>
     </fields>
     <label>Migration Tool Configuration</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Active__c</columns>
+        <columns>Is_Child__c</columns>
+        <columns>Object_Name__c</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Execute_in_Start__c</columns>
+        <columns>Job_Type__c</columns>
+        <columns>Parent_Object_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Job_Type_Both</fullName>
+        <columns>NAME</columns>
+        <columns>Active__c</columns>
+        <columns>Job_Type__c</columns>
+        <columns>Object_Name__c</columns>
+        <columns>Object_API_Name__c</columns>
+        <columns>Parent_Object_API_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Job_Type__c</field>
+            <operation>equals</operation>
+            <value>Both</value>
+        </filters>
+        <label>Job Type - Both</label>
+        <language>en_US</language>
+    </listViews>
     <nameField>
         <displayFormat>CON# {00000000}</displayFormat>
         <label>Migration Tool Configuration Name</label>

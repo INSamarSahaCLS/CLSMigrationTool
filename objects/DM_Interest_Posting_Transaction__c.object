@@ -211,7 +211,7 @@
     </fields>
     <fields>
         <fullName>DM_External_Id__c</fullName>
-        <externalId>true</externalId>
+        <externalId>false</externalId>
         <label>DM External Id</label>
         <length>255</length>
         <required>false</required>
