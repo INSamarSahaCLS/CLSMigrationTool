@@ -6,3 +6,5 @@
     Migrate Amort Schedule? - True (To control if Amort schedule needs to be part of migration process)
     Migrate RSS Schedule? - True  (To control if RSS schedule needs to be part of migration process)
     Enable Strategy-0? - True (To control if we follow strategy 0 for migration process where data is migrated else data is internally                                    generated)
+4. Disable Triggers from custom setting - Org Parameters from Loan package.
+5. Enable triggers back once the migration is completed.
