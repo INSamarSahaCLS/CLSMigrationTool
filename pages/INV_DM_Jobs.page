@@ -6,7 +6,7 @@
       
           <apex:pageBlockSection >
               <apex:input value="{!batchSize}" type="number" id="batchSize" label="Batch Size : "/><br/><br/>
-              <apex:input value="{!instanceNo}" type="number" id="instanceNo" label="Instance No : "/><br/><br/>
+              <!--<apex:input value="{!instanceNo}" type="number" id="instanceNo" label="Instance No : "/><br/><br/>-->
               <apex:commandButton action="{!runValidationJob}" value="Run Validation Job" id="ValidButton"/><br/><br/>
               <apex:commandButton action="{!runMigrationJob}" value="Run Migration Job" id="MigrateButton"/>
           </apex:pageBlockSection>   
